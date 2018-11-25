@@ -8,8 +8,12 @@ else
 	echo "Looks like pyenv is already installed, skipping curl step"
 fi
 
-if ! grep -Fxq 'export PATH="~/.pyenv/bin:$PATH"' ~/.zshrc; then
-	echo 'export PATH="~/.pyenv/bin:$PATH"' >> ~/.zshrc
+if ! grep -Fxq 'export PYENV_ROOT="$HOME/.pyenv"' ~/.zshrc; then
+	echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+fi
+
+if ! grep -Fxq 'export PATH="$PATH:$PYENV_ROOT/bin"' ~/.zshrc; then
+	echo 'export PATH="$PATH:$PYENV_ROOT/bin"' >> ~/.zshrc
 fi
 
 if ! grep -Fxq 'eval "$(pyenv init -)"' ~/.zshrc; then
@@ -20,7 +24,8 @@ if ! grep -Fxq 'eval "$(pyenv virtualenv-init -)"' ~/.zshrc; then
 	echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
 fi
 
-export PATH="~/.pyenv/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PATH:$PYENV_ROOT/bin"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 echo "Executing pyenv update"
