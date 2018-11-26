@@ -1,4 +1,5 @@
 #!/bin/bash
+# depends on ssh, scp, rsync, and tar
 
 hostname="${1}"
 service="${2}"
