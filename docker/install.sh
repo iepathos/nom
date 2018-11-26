@@ -17,4 +17,7 @@ elif [[ "$arch" = "Linux" ]]; then
    stable"
     sudo apt-get update -y
     sudo apt-get install docker-ce -y
+
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
 fi
