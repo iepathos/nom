@@ -1,8 +1,14 @@
 #!/bin/bash
 
-modules=("nopasswd" "homebrew" "zsh" "ssh-keys" "pyenv" "sublime" "thefuck")
+modules=("nopasswd"
+		 "homebrew"
+		 "zsh"
+		 "ssh-keys"
+		 "pyenv"
+		 "sublime"
+		 "thefuck")
 
-for i in "${modules[@]}"
+for module in "${modules[@]}"
 do
-	./${i}/install.sh
+	./${module}/install.sh
 done
