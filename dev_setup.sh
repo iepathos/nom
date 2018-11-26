@@ -1,9 +1,8 @@
 #!/bin/bash
 
-./nopasswd/install.sh
-./homebrew/install.sh
-./zsh/install.sh
-./ssh-keys/install.sh
-./pyenv/install.sh
-./sublime/install.sh
-./thefuck/install.sh
+modules=("nopasswd" "homebrew" "zsh" "ssh-keys" "pyenv" "sublime" "thefuck")
+
+for i in "${modules[@]}"
+do
+	./${i}/install.sh
+done
