@@ -11,3 +11,11 @@ if [[ ! -e ${HOME}/.ssh/id_rsa ]]; then
 else
 	echo "${HOME}/.ssh/id_rsa found, skipping ssh-keygen"
 fi
+
+
+arch=$(uname)
+if [[ "$arch" = "Darwin" ]]; then
+	sudo systemsetup -setremotelogin on
+elif [[ "$arch" = "Linux" ]]; then
+	sudo apt-get install openssh-server -y
+fi
