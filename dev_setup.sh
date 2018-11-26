@@ -6,7 +6,9 @@ modules=("nopasswd"
 		 "ssh-keys"
 		 "pyenv"
 		 "sublime"
-		 "thefuck")
+		 "thefuck"
+		 "slack"
+		 "spotify")
 
 for module in "${modules[@]}"
 do
