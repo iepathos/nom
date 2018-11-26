@@ -6,3 +6,4 @@
 ./ssh-keys/install.sh
 ./pyenv/install.sh
 ./sublime/install.sh
+./thefuck/install.sh
