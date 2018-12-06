@@ -1,6 +1,9 @@
 #!/bin/bash
 # depends on ssh, scp, rsync, and tar
-
+# Usage:
+# 	./remote_setup.sh <hostname> <service>
+# Example:
+#	./remote_setup.sh staging.example.com docker
 hostname="${1}"
 service="${2}"
 
