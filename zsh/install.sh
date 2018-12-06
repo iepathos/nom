@@ -1,5 +1,12 @@
 #!/bin/bash
 
+arch=$(uname)
+if [[ "$arch" = "Darwin" ]]; then
+	brew install zsh zsh-completions
+elif [[ "$arch" = "Linux" ]]; then
+	sudo apt-get install zsh -y
+fi
+
 if command -v zsh >/dev/null 2>&1; then
 	echo "zsh found, skipping zsh install"
 else
