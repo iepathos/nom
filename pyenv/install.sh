@@ -32,6 +32,10 @@ if ! grep -Fxq 'eval "$(pyenv virtualenv-init -)"' ~/.zshrc; then
 	echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
 fi
 
+if ! grep -Fxq 'export PYENV_VIRTUALENV_DISABLE_PROMPT=1' ~/.zshrc; then
+	echo 'export PYENV_VIRTUALENV_DISABLE_PROMPT=1' >> ~/.zshrc
+fi
+
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PATH:$PYENV_ROOT/bin"
 eval "$(pyenv init -)"
