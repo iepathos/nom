@@ -8,6 +8,6 @@ elif [[ "$arch" = "Linux" ]]; then
 	sudo pip3 install thefuck
 fi
 
-if ! grep -Fxq "eval $(thefuck --alias)" ~/.zshrc; then
-	echo "eval $(thefuck --alias)" >> ~/.zshrc
+if ! grep -Fxq 'eval $(thefuck --alias)' ~/.zshrc; then
+	echo 'eval $(thefuck --alias)' >> ~/.zshrc
 fi
