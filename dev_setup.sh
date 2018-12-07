@@ -8,7 +8,8 @@ modules=("nopasswd"
 		 "sublime"
 		 "thefuck"
 		 "slack"
-		 "spotify")
+		 "spotify"
+		 "htop")
 
 for module in "${modules[@]}"
 do
