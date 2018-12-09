@@ -8,6 +8,13 @@ elif [[ "$arch" = "Linux" ]]; then
 	sudo pip3 install thefuck
 fi
 
-if ! grep -Fxq 'eval $(thefuck --alias)' ~/.zshrc; then
-	echo 'eval $(thefuck --alias)' >> ~/.zshrc
-fi
+add_str_if_not_in_file() {
+	str="${1}"
+	filename="${2}"
+	if ! grep -Fxq "$str" $filename; then
+		echo $str >> $filename
+	fi
+}
+
+add_str_if_not_in_file '# thefuck' ~/.zshrc
+add_str_if_not_in_file 'eval $(thefuck --alias)' ~/.zshrc
