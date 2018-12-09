@@ -9,7 +9,9 @@ modules=("nopasswd"
 		 "thefuck"
 		 "slack"
 		 "spotify"
-		 "htop")
+		 "htop"
+		 "bmon"
+		 "chrome")
 
 for module in "${modules[@]}"
 do
