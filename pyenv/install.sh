@@ -16,25 +16,20 @@ else
 	echo "Looks like pyenv is already installed, skipping curl step"
 fi
 
-if ! grep -Fxq 'export PYENV_ROOT="$HOME/.pyenv"' ~/.zshrc; then
-	echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
-fi
+add_str_if_not_in_file() {
+	str="${1}"
+	filename="${2}"
+	if ! grep -Fxq "$str" $filename; then
+		echo $str >> $filename
+	fi
+}
 
-if ! grep -Fxq 'export PATH="$PATH:$PYENV_ROOT/bin"' ~/.zshrc; then
-	echo 'export PATH="$PATH:$PYENV_ROOT/bin"' >> ~/.zshrc
-fi
-
-if ! grep -Fxq 'eval "$(pyenv init -)"' ~/.zshrc; then
-	echo 'eval "$(pyenv init -)"' >> ~/.zshrc
-fi
-
-if ! grep -Fxq 'eval "$(pyenv virtualenv-init -)"' ~/.zshrc; then
-	echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
-fi
-
-if ! grep -Fxq 'export PYENV_VIRTUALENV_DISABLE_PROMPT=1' ~/.zshrc; then
-	echo 'export PYENV_VIRTUALENV_DISABLE_PROMPT=1' >> ~/.zshrc
-fi
+add_str_if_not_in_file '# pyenv' ~/.zshrc
+add_str_if_not_in_file 'export PYENV_ROOT="$HOME/.pyenv"' ~/.zshrc
+add_str_if_not_in_file 'export PATH="$PATH:$PYENV_ROOT/bin"' ~/.zshrc
+add_str_if_not_in_file 'eval "$(pyenv init -)"' ~/.zshrc
+add_str_if_not_in_file 'eval "$(pyenv virtualenv-init -)"' ~/.zshrc
+add_str_if_not_in_file 'export PYENV_VIRTUALENV_DISABLE_PROMPT=1' ~/.zshrc
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PATH:$PYENV_ROOT/bin"
