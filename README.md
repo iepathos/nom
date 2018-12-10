@@ -15,15 +15,7 @@ I've tried a lot of different devops tools for setup and lately I've come to bel
 
 shell scripts should be bash and work in ubuntu and osx.  Needs to have an install.sh to work at all, should also have an uninstall.sh going forward.  Script should be compatible with latest OSX and Ubuntu.  Things that only apply to one platform, example homebrew, should uname check to make sure they skip install if on ubuntu to make sure any script in here is safe to call on either platform even if it doesn't really apply to that particular platform it shouldn't error code.
 
-any given module should work by itself and deal with its own its dependencies.
-
-
-# tests
-
-Given the above requirements for modules, we can make some generalized tests to verify the above holds true so crud on modules can easily be tested. 
-
-+ for each module create an ubuntu vm, copy the module, execute install.sh and verify exit code is 0
-+ do the same with an osx vm (much more prone to bugs but should be manageable with virtualbox and older osx)
+any given module should work by itself and deal with its own dependencies.
 
 
 # shell scripting guidelines
@@ -32,3 +24,12 @@ Given the above requirements for modules, we can make some generalized tests to 
 + shell scripts should be executable from any directory and not assume a current working directory to work appropriately
 + shell scripts should be self contained going down so, they should not require parent directory code, but are ok to require sub-directory code
 + if the script uses a tool that isn't guaranteed to be installed, then it should install that tool inside the script to make sure.  example: wget
+
+
+# tests
+
+Given the above requirements for modules, we can make some generalized tests to verify the above holds true so crud on modules can easily be tested. 
+
++ for each module create an ubuntu vm, copy the module, execute install.sh and verify exit code is 0
++ do the same with an osx vm (much more prone to bugs but should be manageable with virtualbox and older osx)
++ verify script exit code is 0 when called from some random other directory
