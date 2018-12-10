@@ -25,3 +25,10 @@ Given the above requirements for modules, we can make some generalized tests to 
 + for each module create an ubuntu vm, copy the module, execute install.sh and verify exit code is 0
 + do the same with an osx vm (much more prone to bugs but should be manageable with virtualbox and older osx)
 
+
+# shell scripting guidelines
+
++ use bash, not sh, not zsh or fish, just bash
++ shell scripts should be executable from any directory and not assume a current working directory to work appropriately
++ shell scripts should be self contained going down so, they should not require parent directory code, but are ok to require sub-directory code
++ if the script uses a tool that isn't guaranteed to be installed, then it should install that tool inside the script to make sure.  example: wget
