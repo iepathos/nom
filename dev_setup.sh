@@ -13,7 +13,8 @@ modules=("nopasswd"
 		 "spotify"
 		 "htop"
 		 "bmon"
-		 "chrome")
+		 "chrome"
+		 "docker")
 
 for module in "${modules[@]}"
 do
