@@ -1,9 +1,9 @@
 #!/bin/bash
 
 modules=("nopasswd"
-		 "snap"
 		 "homebrew"
 		 "zsh"
+		 "snap"
 		 "ssh-keys"
 		 "gnu-tools"
 		 "gpg"
