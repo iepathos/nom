@@ -4,7 +4,7 @@ arch=$(uname)
 GO_VERSION=1.12.2
 
 if [ "$arch" = "Linux" ]; then
-	sudo snap install go
+	sudo snap install go --classic
 elif [ "$arch" = "Darwin" ]; then
 	brew install go
 fi
