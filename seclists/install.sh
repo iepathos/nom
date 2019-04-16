@@ -1,3 +1,3 @@
 #!/bin/bash
 
-git clone git@github.com:danielmiessler/SecLists.git ~/SecLists
+git clone https://github.com/danielmiessler/SecLists ~/SecLists
