@@ -1,6 +1,7 @@
 #!/bin/bash
 
 modules=("nopasswd"
+		 "snap"
 		 "homebrew"
 		 "zsh"
 		 "ssh-keys"
