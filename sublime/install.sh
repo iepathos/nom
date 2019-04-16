@@ -4,7 +4,7 @@ arch=$(uname)
 if [[ "$arch" = "Darwin" ]]; then
 	brew cask install sublime-text
 elif [[ "$arch" = "Linux" ]]; then
-	sudo snap install sublime-text
+	sudo snap install sublime-text --classic
 fi
 
 add_str_if_not_in_file() {
